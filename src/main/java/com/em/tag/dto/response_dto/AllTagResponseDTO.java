@@ -1,6 +1,7 @@
 package com.em.tag.dto.response_dto;
 
 import com.em.tag.dto.response_dto.TagResponseDTO;
+import com.em.tag.utils.ResponseModel;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @SuperBuilder
-public class AllTagResponseDTO {
+public class AllTagResponseDTO extends ResponseModel {
     @JsonProperty("tag_data")
-    private List<TagResponseDTO> syllabusData;
+    private List<TagResponseDTO> tagData;
 }

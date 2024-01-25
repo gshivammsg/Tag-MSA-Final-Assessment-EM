@@ -1,13 +1,11 @@
 package com.em.tag.controller;
 
 import com.em.tag.dto.request_dto.TagRequestDTO;
+import com.em.tag.dto.response_dto.AllTagResponseDTO;
 import com.em.tag.dto.response_dto.TagResponseDTO;
 import com.em.tag.services.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import static com.em.tag.constants.EndPointsConstants.*;
 
@@ -19,5 +17,20 @@ public class TagController {
     @PostMapping(ADD_TAG)
     public TagResponseDTO addTag(@RequestBody TagRequestDTO tagRequestDTO){
         return tagService.addTag(tagRequestDTO);
+    }
+
+    @GetMapping(GET_ALL_TAG)
+    public AllTagResponseDTO getAllTag(){
+        return tagService.getAllTag();
+    }
+
+    @GetMapping(GET_TAG_BY_ID+"/{id}")
+    public TagResponseDTO getTagById(@PathVariable Integer id){
+        return tagService.getTagById(id);
+    }
+
+    @DeleteMapping(DELETE_TAG_BY_ID+"/{id}")
+    public TagResponseDTO deleteTagById(@PathVariable Integer id){
+        return tagService.deleteTagById(id);
     }
 }
