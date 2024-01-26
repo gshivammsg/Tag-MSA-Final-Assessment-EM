@@ -10,5 +10,7 @@ import java.util.List;
 public interface TagRepository extends JpaRepository<TagEntity, Integer> {
     List<TagEntity> findByIsActive(Integer isActive);
 
-    TagEntity findByIdAndIsActive(Integer id, Integer isActive);
+    TagEntity findByTagIdAndIsActive(Integer id, Integer isActive);
+
+    TagEntity findByTagName(String tagName);
 }

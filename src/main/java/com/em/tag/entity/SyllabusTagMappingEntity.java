@@ -3,24 +3,27 @@ package com.em.tag.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 @Entity
-@Table(name = "tag")
-public class TagEntity {
+@Table(name = "syllabus_tag_mapping")
+public class SyllabusTagMappingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "syllabus_tag_mapping_id")
+    private Integer syllabusTagMappingId;
+
+    @Column(name = "syllabus_id")
+    private Integer syllabusId;
+
     @Column(name = "tag_id")
     private Integer tagId;
-
-    @Column(name = "tag_name")
-    private String tagName;
 
     @Column(name = "is_active")
     @Builder.Default
     private Integer isActive = 1;
-
 }
+

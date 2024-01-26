@@ -18,11 +18,10 @@ import java.io.Serializable;
 @SuperBuilder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"status", "current_server_time", "message", "response"})
-public class ResponseModel implements Serializable {
+public class ResponseModel {
 
     @JsonProperty("status")
-    @JsonAlias("status_code")
-    private int status;
+    private Integer status;
 
     @JsonProperty("current_server_time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
