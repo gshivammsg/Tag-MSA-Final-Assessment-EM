@@ -7,4 +7,6 @@ public final class EndPointsConstants {
     public static final String GET_ALL_TAG = "/getAllTag";
     public static final String GET_TAG_BY_ID = "/getTagById";
     public static final String DELETE_TAG_BY_ID = "/deleteTagById";
+    public static final String GET_SYLLABUS_BY_TAG_ID = "/getSyllabusByTagId";
+    public static final String REMOVE_CACHE = "/removeCache";
 }

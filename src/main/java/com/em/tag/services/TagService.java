@@ -2,6 +2,7 @@ package com.em.tag.services;
 
 import com.em.tag.dto.request_dto.TagRequestDTO;
 import com.em.tag.dto.response_dto.AllTagResponseDTO;
+import com.em.tag.dto.response_dto.GetSyllabusByTagIdResponseDTO;
 import com.em.tag.dto.response_dto.TagResponseDTO;
 
 public interface TagService {
@@ -11,4 +12,5 @@ public interface TagService {
 
     public TagResponseDTO getTagById(Integer id);
     public TagResponseDTO deleteTagById(Integer id);
+    public GetSyllabusByTagIdResponseDTO getSyllabusByTagIdResponseDTO(Integer id);
 }
