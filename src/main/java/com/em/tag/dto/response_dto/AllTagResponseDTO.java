@@ -1,6 +1,5 @@
 package com.em.tag.dto.response_dto;
 
-import com.em.tag.dto.response_dto.TagResponseDTO;
 import com.em.tag.utils.ResponseModel;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

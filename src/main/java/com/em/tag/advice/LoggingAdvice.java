@@ -10,8 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -83,8 +81,6 @@ public class LoggingAdvice {
                     creationTimeCl = creationTimeInMillis;
                 }
                 long fiveDaysAgoMillis = System.currentTimeMillis() - FIVE_DAYS_TIME;
-//                System.out.println("-----------> creationTimeCl ----->  "+creationTimeCl);
-//                System.out.println("-----------> fiveDaysAgoMillis ----->  "+fiveDaysAgoMillis);
                 if (creationTimeCl < fiveDaysAgoMillis) {
                     Files.delete(logFilePath);
                     creationTimeCl = 0;
