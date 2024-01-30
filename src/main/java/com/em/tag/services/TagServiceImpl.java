@@ -154,7 +154,11 @@ public class TagServiceImpl implements TagService{
         }
         List<SyllabusResponseDTO> syllabusResponseDTOList = new ArrayList<>();
         for (SyllabusTagMappingEntity data:syllabusTagMappingEntityList){
-            syllabusResponseDTOList.add(syllabusServiceClient.getSyllabusById(data.getSyllabusId()));
+            try{
+                syllabusResponseDTOList.add(syllabusServiceClient.getSyllabusById(data.getSyllabusId()));
+            }catch (Exception e){
+
+            }
         }
 
         return SyllabusByTagIdResponseDTO.builder()
