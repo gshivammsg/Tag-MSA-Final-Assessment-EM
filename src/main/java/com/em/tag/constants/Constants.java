@@ -6,4 +6,6 @@ public final class Constants {
     public static final Integer IN_ACTIVE = 0;
 
     public static final Integer FIVE_DAYS_TIME = 5 * 24 * 60 * 60 * 1000;
+
+    public static final String SYLLABUS_MSA_URL = "http://localhost:8080/syllabus";
 }

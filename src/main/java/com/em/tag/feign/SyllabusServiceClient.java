@@ -5,7 +5,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(url = "http://localhost:8080/syllabus", name = "Syllabus-MSA")
+import static com.em.tag.constants.Constants.SYLLABUS_MSA_URL;
+
+@FeignClient(url = SYLLABUS_MSA_URL, name = "Syllabus-MSA")
 public interface SyllabusServiceClient {
 
     @GetMapping("getSyllabusById/{id}")
