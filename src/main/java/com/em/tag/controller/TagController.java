@@ -2,7 +2,7 @@ package com.em.tag.controller;
 
 import com.em.tag.dto.request_dto.TagRequestDTO;
 import com.em.tag.dto.response_dto.AllTagResponseDTO;
-import com.em.tag.dto.response_dto.GetSyllabusByTagIdResponseDTO;
+import com.em.tag.dto.response_dto.SyllabusByTagIdResponseDTO;
 import com.em.tag.dto.response_dto.TagResponseDTO;
 import com.em.tag.services.TagService;
 import jakarta.validation.Valid;
@@ -25,13 +25,13 @@ public class TagController {
     }
 
     @GetMapping(GET_ALL_TAG)
-    public AllTagResponseDTO getAllTag(){
+    public AllTagResponseDTO allTag(){
         return tagService.getAllTag();
     }
 
     @Cacheable(key = "#id", value = "getTagById")
     @GetMapping(GET_TAG_BY_ID+"/{id}")
-    public TagResponseDTO getTagById(@PathVariable Integer id){
+    public TagResponseDTO tagById(@PathVariable Integer id){
         return tagService.getTagById(id);
     }
 
@@ -42,7 +42,7 @@ public class TagController {
     }
 
     @GetMapping(GET_SYLLABUS_BY_TAG_ID+"/{id}")
-    public GetSyllabusByTagIdResponseDTO getSyllabusByTagIdResponseDTO(@PathVariable Integer id) {
+    public SyllabusByTagIdResponseDTO syllabusByTagIdResponseDTO(@PathVariable Integer id) {
         return tagService.getSyllabusByTagIdResponseDTO(id);
     }
 

@@ -1,7 +1,7 @@
 package com.em.tag.services;
 import com.em.tag.dto.request_dto.TagRequestDTO;
 import com.em.tag.dto.response_dto.AllTagResponseDTO;
-import com.em.tag.dto.response_dto.GetSyllabusByTagIdResponseDTO;
+import com.em.tag.dto.response_dto.SyllabusByTagIdResponseDTO;
 import com.em.tag.dto.response_dto.SyllabusResponseDTO;
 import com.em.tag.dto.response_dto.TagResponseDTO;
 import com.em.tag.entity.SyllabusTagMappingEntity;
@@ -143,10 +143,10 @@ public class TagServiceImpl implements TagService{
     }
 
     @Override
-    public GetSyllabusByTagIdResponseDTO getSyllabusByTagIdResponseDTO(Integer id) {
+    public SyllabusByTagIdResponseDTO getSyllabusByTagIdResponseDTO(Integer id) {
         List<SyllabusTagMappingEntity> syllabusTagMappingEntityList =  syllabusTagMappingRepository.findByTagIdAndIsActive(id,ACTIVE);
         if(syllabusTagMappingEntityList.isEmpty()){
-            return GetSyllabusByTagIdResponseDTO.builder()
+            return SyllabusByTagIdResponseDTO.builder()
                     .status(HttpStatus.NOT_FOUND.value())
                     .message(SYLLABUS_TAG_ASSOCIATION_NOT_FOUND)
                     .currentServerTime(Utils.getCurrentServerTime())
@@ -157,7 +157,7 @@ public class TagServiceImpl implements TagService{
             syllabusResponseDTOList.add(syllabusServiceClient.getSyllabusById(data.getSyllabusId()));
         }
 
-        return GetSyllabusByTagIdResponseDTO.builder()
+        return SyllabusByTagIdResponseDTO.builder()
                 .syllabusList(syllabusResponseDTOList)
                 .status(HttpStatus.OK.value())
                 .message(HttpStatus.OK.toString())

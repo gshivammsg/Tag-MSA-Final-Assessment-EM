@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @SuperBuilder
-public class GetSyllabusByTagIdResponseDTO extends ResponseModel {
+public class SyllabusByTagIdResponseDTO extends ResponseModel {
     @JsonProperty("syllabus_list")
     private List<SyllabusResponseDTO> syllabusList;
 }
